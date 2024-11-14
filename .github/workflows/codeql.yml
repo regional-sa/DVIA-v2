@@ -81,7 +81,8 @@ jobs:
     - if: matrix.language == 'swift'
       name: Install CocoaPods dependencies
       run: |
-        gem install cocoapods 
+        gem install cocoapods -v 1.15.2
+        cd DVIA-v2
         pod install 
         
     - if: matrix.build-mode == 'manual'
