@@ -60,6 +60,13 @@ jobs:
       uses: actions/checkout@v4
 
     # Initializes the CodeQL tools for scanning.
+    - if: matrix.language == 'swift'
+      name: Install CocoaPods dependencies
+      run: |
+        gem install cocoapods -v 1.15.2
+        cd DVIA-v2
+        pod install 
+    
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v3
       with:
@@ -78,12 +85,6 @@ jobs:
     # to build your code.
     # ℹ️ Command-line programs to run using the OS shell.
     # 📚 See https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsrun
-    - if: matrix.language == 'swift'
-      name: Install CocoaPods dependencies
-      run: |
-        gem install cocoapods -v 1.15.2
-        cd DVIA-v2
-        pod install 
         
     - if: matrix.build-mode == 'manual'
       shell: bash
