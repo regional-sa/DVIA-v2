@@ -87,7 +87,7 @@ jobs:
       name: Build Swift project using Xcode
       run: |
         cd DVIA-v2
-        xcodebuild -workspace DVIA-v2.xcworkspace clean build
+        xcodebuild -workspace DVIA-v2.xcworkspace -list
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
