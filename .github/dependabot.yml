@@ -6,6 +6,6 @@
 version: 2
 updates:
   - package-ecosystem: "cocoapods" # See documentation for possible values
-    directory: "/" # Location of package manifests
+    directory: "/DVIA-v2" # Ubicación del archivo Podfile
     schedule:
       interval: "weekly"
